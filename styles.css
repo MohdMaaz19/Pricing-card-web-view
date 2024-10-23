@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-weight: 700;
+    height: 100vh;
+    background-color: hsl(240, 78%, 98%);
+    background-image: url('./images/bg-top.svg'), url('./images/bg-bottom.svg');
+    background-repeat: no-repeat;
+    background-position: right top, left bottom;
+}
+
+.container {
+    width: auto;
+    margin: 0 auto;
+}
+
+.wrapper {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.title {
+    font-size: 32px;
+    color: hsl(233, 13%, 49%);
+
+}
+
+.switch input {
+    display: none;
+}
+
+.switch {
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider {
+    position: absolute;
+    background: linear-gradient(180deg,
+            hsl(236, 72%, 79%),
+            hsl(237, 63%, 64%));
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 35px;
+}
+
+.slider:hover {
+    background: hsl(234, 14%, 74%)
+}
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked+.slider::before {
+    transform: translateX(26px);
+}
+
+.pricing {
+    color: hsl(234, 14%, 74%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 0;
+}
+
+.pricing-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pricing-box {
+    background-color: #fff;
+    padding: 50px 40px;
+    border-radius: 12px;
+    align-self: center;
+    width: 450px;
+}
+
+.box-title {
+    color: hsl(233, 13%, 49%);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.price-monthly,
+.price-annually {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: hsl(232, 13%, 33%);
+}
+
+.price-monthly {
+    display: none;
+}
+
+.price {
+    font-size: 65px;
+    padding-left: 7px;
+}
+
+ul {
+    list-style: none;
+    padding: 35px 0px;
+}
+
+ul li {
+    color: hsl(233, 13%, 49%);
+    border-bottom: 1px solid hsl(234, 14%, 74%);
+    padding: 18px 0;
+}
+
+ul li:first-child {
+    border-top: 1px solid hsl(234, 14%, 74%);
+}
+
+a {
+    border: none;
+    background: linear-gradient(180deg,
+            hsl(236, 72%, 79%),
+            hsl(237, 63%, 64%));
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 7px;
+    color: white;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+a:hover {
+    color: hsl(232, 13%, 33%);
+    background: transparent;
+    border-color: hsl(232, 13%, 33%)
+}
+
+
+.pricing-box.active {
+    background: linear-gradient(180deg,
+            hsl(236, 72%, 79%),
+            hsl(237, 63%, 64%));
+    padding: 80px 40px;
+}
+
+.pricing-box.active p {
+    color: #FFF;
+}
+
+.pricing-box.active ul li {
+    color: #FFF;
+}
+
+.pricing-box.active a {
+    background: #FFF;
+    color: hsl(237, 63%, 64%);
+}
+
+.pricing-box.active a:hover {
+    color: #FFF;
+    border-color: #FFF;
+    background: transparent;
+}
+
+.pricing p{
+    margin: 0 5px;
+}
+
+
+@media (max-width: 768px) {   
+    .pricing-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price {
+        font-size: 45px;
+    }
+
+    .pricing-box {
+        width: auto;
+        padding: 40px 20px;
+    }
+
+    .pricing-box.active {
+        transform: scaleX(1);
+        padding: 50px 30px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .pricing-main {
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .price {
+        font-size: 45px;
+    }
+
+    .pricing-box.active {
+        transform: scaleX(1);
+        padding: 90px 50px;
+    }
+
+    .pricing-box {
+        width: 100%;
+        padding: 70px 50px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+}
+
